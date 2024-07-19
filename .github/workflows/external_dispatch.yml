@@ -8,6 +8,14 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo
+
+      - name: External event name
+        run: echo 'From external process event name ${{github.event_name}}'
+
+      - name: External event payload
         run: echo 'From external process ${{github.event.client_payload.somedata}}'
+
+      - name: Info about the repo
+        run: echo 'The name of the repo ${{github.repository}} and the branch ${{github.ref}}'
+      
 
