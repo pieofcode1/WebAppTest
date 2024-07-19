@@ -1,4 +1,4 @@
-name: API trigger test
+name: External API trigger test
 
 on: 
   repository_dispatch:
@@ -13,7 +13,7 @@ jobs:
         run: echo 'From external process event name ${{github.event_name}}'
 
       - name: External event payload
-        run: echo 'From external process ${{github.event.client_payload.somedata}}'
+        run: echo 'From external process ${{github.event.client_payload.data}}'
 
       - name: Info about the repo
         run: echo 'The name of the repo ${{github.repository}} and the branch ${{github.ref}}'
